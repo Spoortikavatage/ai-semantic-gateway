@@ -1,5 +1,4 @@
 package com.semantic.gateway.controller;
-
 import com.semantic.gateway.model.QueryRequest;
 import com.semantic.gateway.model.QueryResponse;
 import com.semantic.gateway.service.QueryService;
