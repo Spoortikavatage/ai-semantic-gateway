@@ -3,6 +3,7 @@ package com.semantic.gateway.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "semantic_cache")
 public class SemanticCache {
 
   @Id
@@ -10,20 +11,14 @@ public class SemanticCache {
   private Long id;
 
   private String prompt;
-
-  @Column(columnDefinition = "TEXT")
   private String response;
-
-  @Column(columnDefinition = "TEXT")
-  private String embedding;
 
   public SemanticCache() {
   }
 
-  public SemanticCache(String prompt, String response, String embedding) {
+  public SemanticCache(String prompt, String response) {
     this.prompt = prompt;
     this.response = response;
-    this.embedding = embedding;
   }
 
   public Long getId() {
@@ -34,11 +29,15 @@ public class SemanticCache {
     return prompt;
   }
 
+  public void setPrompt(String prompt) {
+    this.prompt = prompt;
+  }
+
   public String getResponse() {
     return response;
   }
 
-  public String getEmbedding() {
-    return embedding;
+  public void setResponse(String response) {
+    this.response = response;
   }
 }
